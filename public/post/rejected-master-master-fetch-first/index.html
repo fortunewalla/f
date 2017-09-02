@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>![rejected] master -&gt; master (fetch first) | Data &#43; Analysis</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/terms-octicons-hljs-style.css">
+
+
+<link rel="stylesheet" href="/css/font-awesome.min-4.7.0.css">
+
+<link rel="stylesheet" href="/css/octicons-3.0.1.css">
+<link rel="stylesheet" href="/css/octicons-2.4.1.css"> 
+<link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet"> 
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">![rejected] master -&gt; master (fetch first)</span></h1>
+<h2 class="author">fw</h2>
+<h2 class="date">Jul 12, 2017</h2>
+
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/nt">nt</a> 
+  
+  
+  
+  Tags: <a href="/tags/git">git</a> <a href="/tags/error">error</a> <a href="/tags/github">github</a> <a href="/tags/pull">pull</a> <a href="/tags/push">push</a> <a href="/tags/fork">fork</a> <a href="/tags/origin">origin</a> <a href="/tags/master">master</a> 
+  
+  
+</p>
+
+
+</div>
+
+<main>
+<ul>
+<li>Original repo: <code>fw/f</code></li>
+<li>Transferred repo: <code>rbind/f</code></li>
+<li>Created <code>README.md</code> online using <code>github.com</code> But forgot to update local with remote repo</li>
+<li>Made changes locally, then when trying to update. <code>git push -u origin master</code></li>
+<li>git error <code>![rejected] master -&gt; master (fetch first)</code></li>
+<li>first <code>git pull origin master</code> to update local repo with remote repo changes.</li>
+<li>then <code>git push -u origin master</code> to update local changes to remote repo</li>
+</ul>
+<pre class="bash"><code>manmac@manmacbv:~/hugo-xmin$ git status
+On branch master
+Your branch is up-to-date with &#39;origin/master&#39;.
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+    deleted:    content/post/2017-07-09-learning-git-a-beginners-git-course-infinite-skills-udemy.Rmd
+    deleted:    content/post/2017-07-09-learning-git-a-beginners-git-course-infinite-skills-udemy.html
+    modified:   public/categories/bk/index.xml
+    modified:   public/categories/index.html
+    modified:   public/categories/index.xml
+    modified:   public/index.xml
+    modified:   public/post/index.html
+    modified:   public/post/index.xml
+    modified:   public/post/learning-git-a-beginners-git-course-infinite-skills-udemy/index.html
+    modified:   public/sitemap.xml
+    modified:   public/tags/course/index.xml
+    modified:   public/tags/git/index.xml
+    modified:   public/tags/index.html
+    modified:   public/tags/index.xml
+    modified:   public/tags/notes/index.xml
+    modified:   public/tags/sourcetree/index.xml
+    modified:   public/tags/udemy/index.xml
+
+manmac@manmacbv:~/hugo-xmin$ git commit -m &quot;updated posts&quot;
+[master b3e74cc] updated posts
+ 17 files changed, 137 insertions(+), 347 deletions(-)
+ delete mode 100644 content/post/2017-07-09-learning-git-a-beginners-git-course-infinite-skills-udemy.Rmd
+ delete mode 100644 content/post/2017-07-09-learning-git-a-beginners-git-course-infinite-skills-udemy.html
+manmac@manmacbv:~/hugo-xmin$ git push -u origin master
+Username for &#39;https://github.com&#39;: fortunewalla@outlook.com
+Password for &#39;https://fortunewalla@outlook.com@github.com&#39;: 
+To https://github.com/fortunewalla/f.git
+ ! [rejected]        master -&gt; master (fetch first)
+error: failed to push some refs to &#39;https://github.com/fortunewalla/f.git&#39;
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., &#39;git pull ...&#39;) before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
+manmac@manmacbv:~/hugo-xmin$ git remote add origin https://github.com/rbind/f.gitfatal: remote origin already exists.
+manmac@manmacbv:~/hugo-xmin$ git fetch origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/fortunewalla/f
+ * branch            master     -&gt; FETCH_HEAD
+   5d1800c..f9b1907  master     -&gt; origin/master
+manmac@manmacbv:~/hugo-xmin$ git merge origin master
+merge: origin - not something we can merge
+manmac@manmacbv:~/hugo-xmin$ git push -u origin master
+To https://github.com/fortunewalla/f.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to &#39;https://github.com/fortunewalla/f.git&#39;
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: &#39;git pull ...&#39;) before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
+manmac@manmacbv:~/hugo-xmin$ git pull origin master
+From https://github.com/fortunewalla/f
+ * branch            master     -&gt; FETCH_HEAD
+Merge made by the &#39;recursive&#39; strategy.
+ README.md | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+ create mode 100644 README.md
+manmac@manmacbv:~/hugo-xmin$ git push -u origin master
+Counting objects: 32, done.
+Compressing objects: 100% (31/31), done.
+Writing objects: 100% (32/32), 3.48 KiB | 0 bytes/s, done.
+Total 32 (delta 22), reused 0 (delta 0)
+remote: Resolving deltas: 100% (22/22), completed with 21 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/rbind/f.git
+To https://github.com/fortunewalla/f.git
+   f9b1907..8f40bea  master -&gt; master
+Branch master set up to track remote branch master from origin.
+manmac@manmacbv:~/hugo-xmin$ 
+</code></pre>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+
+<script>
+hljs.configure({languages: ['r','bash','css','html','json','tex','latex','sql','toml','yaml']});
+hljs.initHighlightingOnLoad();
+</script>
+
+  
+  <hr/>
+  &copy; <a href="https://f.rbind.io/">Fortune Walla</a> 2013-2017 | Волко́в боя́ться — в лес не ходи́ть
+  
+  </footer>
+  </body>
+</html>

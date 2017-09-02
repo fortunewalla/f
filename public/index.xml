@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Data &#43; Analysis</title>
+    <link>/</link>
+    <description>Recent content in Home on Data &#43; Analysis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>![rejected] master -&gt; master (fetch first)</title>
+      <link>/post/rejected-master-master-fetch-first/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rejected-master-master-fetch-first/</guid>
+      <description>Original repo: fw/fTransferred repo: rbind/fCreated README.md online using github.com But forgot to update local with remote repoMade changes locally, then when trying to update. git push -u origin mastergit error ![rejected] master -&amp;gt; master (fetch first)first git pull origin master to update local repo with remote repo changes.then git push -u origin master to update local changes to remote repomanmac@manmacbv:~/hugo-xmin$ git statusOn branch masterYour branch is up-to-date with &amp;#39;origin/master&amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>Test Post for Blogdown</title>
+      <link>/post/test-post-for-blogdown/</link>
+      <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/test-post-for-blogdown/</guid>
+      <description>Here we are tyring to publish some things about R.
+R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Data + Analysis documenting tools &amp;amp; techniques for data analysis
+website template hbxwww</description>
+    </item>
+    
+  </channel>
+</rss>

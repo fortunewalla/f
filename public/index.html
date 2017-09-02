@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+	<meta name="generator" content="Hugo 0.25.1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Data &#43; Analysis</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/terms-octicons-hljs-style.css">
+
+
+<link rel="stylesheet" href="/css/font-awesome.min-4.7.0.css">
+
+<link rel="stylesheet" href="/css/octicons-3.0.1.css">
+<link rel="stylesheet" href="/css/octicons-2.4.1.css"> 
+<link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet"> 
+
+
+<script async src="/js/load-typekit.js"></script>
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/post/">Posts</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+
+<p><center>
+<i class="mega64-octicon octicon-eye"></i> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; <i class="mega64-octicon octicon-eye"></i></p>
+
+<p><em><strong>tools &amp; techniques for analysis</strong></em>
+</center></p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><i class="mega64-octicon octicon-hubot"> </i></td>
+<td><strong>ml</strong> machine learning, data mining, deep learning, ai</td>
+</tr>
+
+<tr>
+<td><i class="mega64-octicon octicon-graph"></i></td>
+<td><strong>da</strong> probability, statistics, data analysis, business intellligence</td>
+</tr>
+
+<tr>
+<td><i class="fa fa-pencil fa-4x"></i></td>
+<td><strong>nt</strong> notes, tips, tricks, usage of tools</td>
+</tr>
+
+<tr>
+<td><i class="mega64-octicon octicon-pulse"></i></td>
+<td><strong>ts</strong> time series, signal processing</td>
+</tr>
+
+<tr>
+<td><i class="fa fa-book fa-4x"></i></td>
+<td><strong>bk</strong> books, course notes, reference material</td>
+</tr>
+
+<tr>
+<td><i class="mega64-octicon octicon-telescope"></i></td>
+<td><strong>bz</strong> project, management, retail, customer, marketing, business</td>
+</tr>
+
+<tr>
+<td><i class="mega64-octicon octicon-beaker"></i></td>
+<td><strong>cd</strong> code, experiments, algorithms, software</td>
+</tr>
+
+<tr>
+<td><i class="mega64-octicon octicon-microscope"></i></td>
+<td><strong>cs</strong> case studies</td>
+</tr>
+
+<tr>
+<td><i class="fa fa-graduation-cap fa-4x"></i></td>
+<td><strong>ac</strong> academics, articles, research papers</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Syntax highlight test</strong></p>
+
+<pre><code class="language-r"># Goal: Some of the standard tests
+
+# A classical setting --
+x &lt;- runif(100, 0, 10)                  # 100 draws from U(0,10)
+y &lt;- 2 + 3*x + rnorm(100)               # beta = [2, 3] and sigma is 1
+d &lt;- lm(y ~ x)
+# CLS results --
+summary(d)
+
+library(sandwich)
+library(lmtest)
+# Durbin-Watson test --
+dwtest(d, alternative=&quot;two.sided&quot;)
+# Breusch-Pagan test --
+bptest(d)
+# Heteroscedasticity and autocorrelation consistent (HAC) tests
+coeftest(d, vcov=kernHAC)
+
+# Tranplant the HAC values back in --
+library(xtable)
+sum.d &lt;- summary(d)
+xtable(sum.d)
+sum.d$coefficients[1:2,1:4] &lt;- coeftest(d, vcov=kernHAC)[1:2,1:4]
+xtable(sum.d)
+</code></pre>
+
+<p><strong>Latex test:</strong></p>
+
+<p><code>$${\sqrt {n}}\left(\left({\frac {1}{n}}\sum _{i=1}^{n}X_{i}\right)-\mu \right)\ {\xrightarrow {d}}\ N\left(0,\sigma ^{2}\right)$$</code></p>
+
+
+  
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+
+<script>
+hljs.configure({languages: ['r','bash','css','html','json','tex','latex','sql','toml','yaml']});
+hljs.initHighlightingOnLoad();
+</script>
+
+  
+  <hr/>
+  &copy; <a href="https://f.rbind.io/">Fortune Walla</a> 2013-2017 | Волко́в боя́ться — в лес не ходи́ть
+  
+  </footer>
+  </body>
+</html>

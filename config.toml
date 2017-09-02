@@ -1,0 +1,41 @@
+baseurl = "/"
+languageCode = "en-us"
+title = "Data + Analysis"
+theme = "hugo-xmin"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+preserveTaxonomyNames = true
+footnotereturnlinkcontents = "↩"
+
+[permalinks]
+    post = "/post/:slug/"
+
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+[[menu.main]]
+    name = "Posts"
+    url = "/post/"
+    weight = 3
+[[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 4
+[[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 5
+[[menu.main]]
+    name = "Subscribe"
+    url = "/index.xml"
+
+[params]
+    description = "A website built through Hugo and blogdown."
+    footer = "&copy; [Fortune Walla](https://f.rbind.io/) 2013-2017 | Волко́в боя́ться — в лес не ходи́ть"

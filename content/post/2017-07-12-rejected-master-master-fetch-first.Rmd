@@ -1,0 +1,110 @@
+---
+title: '![rejected] master -> master (fetch first)'
+author: fw
+date: '2017-07-12'
+slug: rejected-master-master-fetch-first
+categories:
+  - nt
+tags:
+  - git
+  - error
+  - github
+  - pull
+  - push
+  - fork
+  - origin
+  - master
+---
+
+* Original repo: `fw/f`
+* Transferred repo: `rbind/f`
+* Created `README.md` online using `github.com` But forgot to update local with remote repo
+* Made changes locally, then when trying to update. `git push -u origin master`
+* git error `![rejected] master -> master (fetch first)`
+* first `git pull origin master` to update local repo with remote repo changes.
+* then `git push -u origin master` to update local changes to remote repo
+
+```bash
+manmac@manmacbv:~/hugo-xmin$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    content/post/2017-07-09-learning-git-a-beginners-git-course-infinite-skills-udemy.Rmd
+	deleted:    content/post/2017-07-09-learning-git-a-beginners-git-course-infinite-skills-udemy.html
+	modified:   public/categories/bk/index.xml
+	modified:   public/categories/index.html
+	modified:   public/categories/index.xml
+	modified:   public/index.xml
+	modified:   public/post/index.html
+	modified:   public/post/index.xml
+	modified:   public/post/learning-git-a-beginners-git-course-infinite-skills-udemy/index.html
+	modified:   public/sitemap.xml
+	modified:   public/tags/course/index.xml
+	modified:   public/tags/git/index.xml
+	modified:   public/tags/index.html
+	modified:   public/tags/index.xml
+	modified:   public/tags/notes/index.xml
+	modified:   public/tags/sourcetree/index.xml
+	modified:   public/tags/udemy/index.xml
+
+manmac@manmacbv:~/hugo-xmin$ git commit -m "updated posts"
+[master b3e74cc] updated posts
+ 17 files changed, 137 insertions(+), 347 deletions(-)
+ delete mode 100644 content/post/2017-07-09-learning-git-a-beginners-git-course-infinite-skills-udemy.Rmd
+ delete mode 100644 content/post/2017-07-09-learning-git-a-beginners-git-course-infinite-skills-udemy.html
+manmac@manmacbv:~/hugo-xmin$ git push -u origin master
+Username for 'https://github.com': fortunewalla@outlook.com
+Password for 'https://fortunewalla@outlook.com@github.com': 
+To https://github.com/fortunewalla/f.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/fortunewalla/f.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+manmac@manmacbv:~/hugo-xmin$ git remote add origin https://github.com/rbind/f.gitfatal: remote origin already exists.
+manmac@manmacbv:~/hugo-xmin$ git fetch origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/fortunewalla/f
+ * branch            master     -> FETCH_HEAD
+   5d1800c..f9b1907  master     -> origin/master
+manmac@manmacbv:~/hugo-xmin$ git merge origin master
+merge: origin - not something we can merge
+manmac@manmacbv:~/hugo-xmin$ git push -u origin master
+To https://github.com/fortunewalla/f.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/fortunewalla/f.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+manmac@manmacbv:~/hugo-xmin$ git pull origin master
+From https://github.com/fortunewalla/f
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ README.md | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+ create mode 100644 README.md
+manmac@manmacbv:~/hugo-xmin$ git push -u origin master
+Counting objects: 32, done.
+Compressing objects: 100% (31/31), done.
+Writing objects: 100% (32/32), 3.48 KiB | 0 bytes/s, done.
+Total 32 (delta 22), reused 0 (delta 0)
+remote: Resolving deltas: 100% (22/22), completed with 21 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/rbind/f.git
+To https://github.com/fortunewalla/f.git
+   f9b1907..8f40bea  master -> master
+Branch master set up to track remote branch master from origin.
+manmac@manmacbv:~/hugo-xmin$ 
+
+```
+
+
+

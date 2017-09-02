@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Error on Data &#43; Analysis</title>
+    <link>/tags/error/</link>
+    <description>Recent content in Error on Data &#43; Analysis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/error/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>![rejected] master -&gt; master (fetch first)</title>
+      <link>/post/rejected-master-master-fetch-first/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rejected-master-master-fetch-first/</guid>
+      <description>Original repo: fw/fTransferred repo: rbind/fCreated README.md online using github.com But forgot to update local with remote repoMade changes locally, then when trying to update. git push -u origin mastergit error ![rejected] master -&amp;gt; master (fetch first)first git pull origin master to update local repo with remote repo changes.then git push -u origin master to update local changes to remote repomanmac@manmacbv:~/hugo-xmin$ git statusOn branch masterYour branch is up-to-date with &amp;#39;origin/master&amp;#39;.</description>
+    </item>
+    
+  </channel>
+</rss>
