@@ -6,10 +6,19 @@
     <description>Recent content in Git on Data &#43; Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>! [rejected]        master -&gt; master (non-fast-forward)</title>
+      <link>/post/rejected-master-master-non-fast-forward/</link>
+      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rejected-master-master-non-fast-forward/</guid>
+      <description>Added commit as another user in local and pushed to github master Now had to revert to previous to last commit and again push  X:\git\www&amp;gt;git rebase -i HEAD~2 Successfully rebased and updated refs/heads/master. X:\git\www&amp;gt;git push -u origin master OpenGL Warning: crPixelCopy3D: simply crMemcpy&#39;ing from srcPtr to dstPtr fatal: TaskCanceledException encountered. A task was canceled. Username for &#39;https://github.com&#39;: fortunewalla Password for &#39;https://fortunewalla@github.com&#39;: To https://github.com/rbind/f.git ! [rejected] master -&amp;gt; master (non-fast-forward) error: failed to push some refs to &#39;https://github.</description>
+    </item>
     
     <item>
       <title>![rejected] master -&gt; master (fetch first)</title>
